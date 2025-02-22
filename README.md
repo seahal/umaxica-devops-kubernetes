@@ -1,2 +1,2 @@
-# leetcode
-codes for leetcode
+# tl;dr
+My repository for studying.
