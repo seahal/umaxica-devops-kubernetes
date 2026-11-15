@@ -26,6 +26,22 @@
 - For local sanity tests, use a disposable cluster (kind/minikube) and apply only the changed manifests.
 - Keep changes small and reversible; document any required prerequisites (CRDs, namespaces).
 
+## Evidence
+
+Completed tests, validations, verifications, audits, security checks and
+performance checks leave a short record in `evidence/` when retaining the result
+is useful. Records describe work that was actually performed — never plans,
+intentions, or unverified claims. A check that could not be completed is
+recorded as such, with the reason and whatever was observed.
+
+- `evidence/` is flat; no subdirectories.
+- Only `.md` files.
+- `YYYY-MM-DD-<topic>.md`, ISO date, lowercase hyphenated topic.
+- No raw logs, screenshots, binaries, archives, dumps, generated reports or
+  other large artifacts. Summarize them, and cite the commands, identifiers,
+  hashes, measurements and excerpts that carry the result.
+- Enforced by `sh scripts/check-evidence.sh` (CI).
+
 ## Commit & Pull Request Guidelines
 - Commits: follow Conventional Commits (e.g., `feat: add ror deployment`, `fix: pin nginx image tag`, `ci: extend validation workflow`).
 - PRs must include: summary of changes, affected files, `kubectl diff` output (trimmed), linked issue, risk/rollback notes, and screenshots/log snippets when relevant.
